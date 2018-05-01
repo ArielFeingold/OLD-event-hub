@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_01_160939) do
+ActiveRecord::Schema.define(version: 2018_05_01_172500) do
 
   create_table "meetups", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,15 @@ ActiveRecord::Schema.define(version: 2018_05_01_160939) do
     t.time "meeting_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "meetups_users", force: :cascade do |t|
+    t.integer "meetup_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meetup_id"], name: "index_meetups_users_on_meetup_id"
+    t.index ["user_id"], name: "index_meetups_users_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
