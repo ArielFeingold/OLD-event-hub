@@ -4,10 +4,11 @@ class User < ApplicationRecord
   has_and_belongs_to_many :events
   has_many :comments
 
-  validates :first_name, :last_name, :birthday, :password, :email, presence: { message: "must be given" }
-  validates :email, uniqueness: { message: "The email you provided is already used" }
-  validates :username, uniqueness: { message: "The username you provided is already taken" }
-  validates :password, confirmation: { message: "Passwords don't match" }
-
+  validates :email, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true
+  validates :password, presence: true, confirmation: true
+  validates :birthday, presence: true, on: :create
+  validates :first_name, presence: true, on: :create
+  validates :last_name, presence: true, on: :create
 
 end
