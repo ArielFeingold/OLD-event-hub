@@ -15,7 +15,7 @@
   <div class="form-group">
     <%= f.label :birthday, "Date of Birth" %><br />
     <%if @user.errors[:birthday].present?%>
-      <div class="alert alert-danger p0 m0" role="alert">
+      <div class="alert alert-danger" role="alert">
         <%= @user.errors.full_messages_for(:birthday).first %>
       </div>
     <%end%>
