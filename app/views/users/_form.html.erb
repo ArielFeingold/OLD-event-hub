@@ -27,6 +27,11 @@
     <br>
     <%= f.password_field :password, class: "form-control" %>
 
+    <div class="form-group">
+      <%= f.label :password_confirmation, "Confirm Password" %>
+      <br>
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+
   <div class="actions">
     <br/>
     <%= f.submit "Open Account", class: "btn btn-primary" %>
